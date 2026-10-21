@@ -7,8 +7,10 @@ public class PlayerAttack : MonoBehaviour
     private SpriteRenderer weaponRender;
     private Collider2D weaponCollider;
     public Transform player;
+    public float time; 
     public float currentDirection;
     public float lastDirection;
+    public bool countdownReady;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,15 +35,23 @@ public class PlayerAttack : MonoBehaviour
             currentDirection = lastDirection;
         }
 
+        if (countdownReady)
+        {
+            time += Time.deltaTime;
+        }
+
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             weaponRender.enabled = true;
             weaponCollider.enabled = true;
+            countdownReady = true;
         }
-        else
+        else if (time >= 1)
         {
             weaponRender.enabled = false;
             weaponCollider.enabled = false;
+            time = 0;
+            countdownReady = false;
         }
     }
 
