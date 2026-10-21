@@ -30,4 +30,9 @@ public class PlayerAttack : MonoBehaviour
             currentDirection = lastDirection;
         }
     }
+
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        print("hi");
+    }
 }
