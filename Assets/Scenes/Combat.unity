@@ -155,7 +155,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e9c03b260fd2a8b4692a94e859a28b05, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -985,10 +985,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfc8137c841e7a478b16284b5c0ee50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  playerMovement: {fileID: 763257309}
   player: {fileID: 763257308}
-  currentDirection: 0
-  lastDirection: 0
+  time: 0
+  countdownReady: 0
+  normal: 0
+  mousePos: {x: 0, y: 0}
+  characterPos: {x: 0, y: 0}
+  pointDirection: {x: 0, y: 0}
 --- !u!1 &2117307351
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,16 +1,19 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public MeowlMovement playerMovement;
+    //public MeowlMovement playerMovement;
     private SpriteRenderer weaponRender;
     private Collider2D weaponCollider;
     public Transform player;
     public float time; 
-    public float currentDirection;
-    public float lastDirection;
+    //public float currentDirection;
+    //public float lastDirection;
     public bool countdownReady;
+    public float normal;
+    public Vector2 mousePos, characterPos, pointDirection;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,19 +24,33 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lastDirection = currentDirection;
-        currentDirection = playerMovement.xInput;
-        gameObject.transform.position = new Vector3 (player.position.x + lastDirection, player.position.y, 0);
+        mousePos = Input.mousePosition;
+        characterPos = Camera.main.WorldToScreenPoint(player.transform.position);
 
-        if(lastDirection == 0)
+        pointDirection = mousePos - characterPos;
+
+        if (pointDirection.x < 0)
         {
-            lastDirection = 1;
+            normal = -1;
+        }
+        else if (pointDirection.x > 0)
+        {
+            normal = 1;
         }
 
-        if (currentDirection == 0)
-        {
-            currentDirection = lastDirection;
-        }
+        // lastDirection = currentDirection;
+        // currentDirection = playerMovement.xInput;
+        gameObject.transform.position = new Vector3 (player.position.x + normal, player.position.y, 0);
+
+        // if(lastDirection == 0)
+        // {
+        //     lastDirection = 1;
+        // }
+
+        // if (currentDirection == 0)
+        // {
+        //     currentDirection = lastDirection;
+        // }
 
         if (countdownReady)
         {
