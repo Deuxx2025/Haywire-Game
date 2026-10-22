@@ -7,16 +7,16 @@ public class MeowlMovement : MonoBehaviour
     public float xInput;
 
     [Header("Speed")]
-    public float minSpeed = 5;          // speed you start at
-    public float baseMaxSpeed = 15;     
-    public float accelRate = 5f;        // units gained while accelerating
-    public float brakeRate = 20f;       // units lost when reversing direction
-    public float releaseRate = 40f;     // units lost when you let go of the keys
+    public float minSpeed = 5;
+    public float baseMaxSpeed = 15;
+    public float accelRate = 5f;
+    public float brakeRate = 20f;
+    public float releaseRate = 40f;
 
     [Header("Speed boost")]
-    public float boostDelay = 1.5f;     // seconds at top speed before the extra boost
-    public float boostAmount = 2f;      // how much the max speed goes up
-    public int maxBoosts = 1;           // how many times the extra boost can happen
+    public float boostDelay = 1.5f;
+    public float boostAmount = 2f;
+    public int maxBoosts = 1;
 
     [Header("Info/Debug")]
     public float velX;
@@ -41,24 +41,41 @@ public class MeowlMovement : MonoBehaviour
     void Update()
     {
         xInput = Input.GetAxisRaw("Horizontal");
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, 0.15f, groundLayer);
-
-        if (damageCD <= 0)
-        {
-            HandleHorizontal();
-            rb.linearVelocity = new Vector2(velX, rb.linearVelocity.y);
-        }
-        else
-        {
-            damageCD -= Time.deltaTime;
-            velX = rb.linearVelocity.x;   // stay in sync with knockback
-            ResetBoost();
-        }
+        CheckGround();
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
+    }
+
+    void FixedUpdate()
+    {
+        CheckGround();
+
+        if (damageCD <= 0)
+        {
+            // Blocked by a wall = Drop momentum
+            if (xInput != 0 && Mathf.Abs(rb.linearVelocity.x) < 0.1f && Mathf.Abs(velX) > 0.1f)
+            {
+                velX = 0;
+                ResetBoost();
+            }
+
+            HandleHorizontal();
+            rb.linearVelocity = new Vector2(velX, rb.linearVelocity.y);
+        }
+        else
+        {
+            damageCD -= Time.fixedDeltaTime;
+            velX = rb.linearVelocity.x;
+            ResetBoost();
+        }
+    }
+
+    void CheckGround()
+    {
+        isGrounded = Physics2D.OverlapCircle(feetPos.position, 0.15f, groundLayer);
     }
 
     void HandleHorizontal()
@@ -67,25 +84,22 @@ public class MeowlMovement : MonoBehaviour
 
         if (xInput == 0)
         {
-            // No input: slow down and stop boost progression
-            velX = Mathf.MoveTowards(velX, 0, releaseRate * Time.deltaTime);
+            velX = Mathf.MoveTowards(velX, 0, releaseRate * Time.fixedDeltaTime);
             ResetBoost();
         }
         else if (reversing)
         {
-            // Opposite direction held: remove speed up to 0
-            velX = Mathf.MoveTowards(velX, 0, brakeRate * Time.deltaTime);
+            velX = Mathf.MoveTowards(velX, 0, brakeRate * Time.fixedDeltaTime);
             ResetBoost();
         }
         else
         {
-            // Moving the way the player's holding
             if (Mathf.Abs(velX) < minSpeed)
                 velX = xInput * minSpeed;
 
             if (isGrounded)
             {
-                float speed = Mathf.MoveTowards(Mathf.Abs(velX), currentMax, accelRate * Time.deltaTime);
+                float speed = Mathf.MoveTowards(Mathf.Abs(velX), currentMax, accelRate * Time.fixedDeltaTime);
                 velX = xInput * speed;
                 HandleBoost();
             }
@@ -96,13 +110,13 @@ public class MeowlMovement : MonoBehaviour
     {
         if (boostsDone >= maxBoosts) return;
 
-        if (Mathf.Abs(velX) >= currentMax - 0.01f)   // at top speed
+        if (Mathf.Abs(velX) >= currentMax - 0.01f)
         {
-            boostTimer += Time.deltaTime;
+            boostTimer += Time.fixedDeltaTime;
             if (boostTimer >= boostDelay)
             {
-                currentMax += boostAmount;            // new max speed
-                velX = xInput * currentMax;           // instant jump to new speed
+                currentMax += boostAmount;
+                velX = xInput * currentMax;
                 boostsDone++;
                 boostTimer = 0;
             }
