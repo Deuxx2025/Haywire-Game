@@ -27,8 +27,6 @@ public class PlayerAttack : MonoBehaviour
         mousePos = Input.mousePosition;
         characterPos = Camera.main.WorldToScreenPoint(player.transform.position);
 
-        pointDirection = mousePos - characterPos;
-
         if (pointDirection.x < 0)
         {
             normal = -1;
@@ -62,6 +60,7 @@ public class PlayerAttack : MonoBehaviour
             weaponRender.enabled = true;
             weaponCollider.enabled = true;
             countdownReady = true;
+            pointDirection = mousePos - characterPos;
         }
         else if (time >= 1)
         {
