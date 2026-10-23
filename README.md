@@ -1,2 +1,25 @@
 # Awesome game 
-I'll use this section just to create a little diary for development
+I'll use this section just to create a little diary for development. 
+
+## Introduction
+Hello, if you're reading this you're either the professor checking why is there a `README.md` in this project or perhaps you're a random person checking the source code of the game. Perhaps I can take the liberty to actually put pieces of the `README.md` inside the game.
+
+So yeah, welcome to `Haywire` the game made by クリアー or Deuxx2025 and RC, initially this game was supposed to be a simple action side-scroller with some platforming aspects but the professor decided that it was too shallow of a concept so we pivoted to a weird mixture of shooter arena/rogue like/round base enemy waves, in part I do understand because the action platformer is pretty "berreado" as we would say in the spanish language. But in my opinion execution is the deciding factor when making a game but also making this weird concept of a game is something that I am looking forward. 
+
+The status of the game as of right now is not good in terms of theme implementation on the gameplay and also getting the mechanics down, we have a theme which is Truth, Lies & Democracy, basically it is a game jam that the main objective is to create an interactive way for the player to learn about the dangers of misinformation and the manipulation of the media but in the latest installment they are also going to include the dangers of generative AI and how can we differentiate in between that and reality. 
+
+This game was born as a satire of AI absurdism, AI was born to help us create better things because one of the uses of AI is to actually inspect every route that we can take in order to make a cure for something but people are using it to create deepfakes of trivial things, the best example is the video of Will Smith eating pasta and at the very beginnig it was very obvious that it was AI generated but many years later with the knowledge and a good prompt people can make believable videos that actually rivals reality.
+
+So we decided to make a farmer go to a Data Center and destroy it because it was damaging the area he was living in, this is something that can happen on a prompt because the situation is so absurd. Then when the farmer destroys the Data Center the police takes him in and is sued by the company that owned the AI Data Center, when he gets to court the farmer encounters that all people are in their phones checking social media or making prompts to the AI to actually do their jobs and when they run out of tokens they just leave, become non-verbal or start to scroll on social media and this is even true to the judge because at the end all the charges are dismissed because the judge didn't know how to proceed. 
+
+## Problems
+As the gameplay we have envisioned is pure action and the feedback we got is that maybe it's going to be a little boring because the player never changes setting and the explanation of the mechanics although a lot they are vague so we weren't convincing no one that the game is going to be good and this was food for thought. So I decided to step back and see how can we make it better with the feedback, so I like making stories and I think that the story of the game is good, we just haven't made the connection. 
+
+As of right now the only thing we explained from the game is the mechanics and what the player is going to do but we haven't really said story wise how will things get down, one idea that we got from the feedback is that since the player is going to be in the same setting then we can have different backgrounds like a simulation and I like that, it is just cosmetic but it brings a bit of freshness to the gameplay but it is going to get old pretty quick so we can either created various scenarios that swap every so often or we can make so that the layout of the map actually changes when the scene changes. 
+
+## Story mode
+So the game right now is the same and it doesn't matter which game mode you choose but that day I thought on actually merging the 2 ideas into one, make the story mode actually have an action platformer part, maybe it can be beginning the famous 1-1 world, we can have the farmer go from the house to the Data Center and have some mario style gameplay with guns, this level would serve the purpose of teaching the player the basic movement and attacks. 
+
+Once the player has traversed from point A to point B the player is inside the Data Center and there the gameplay changes into the more modern version, which is a round base survival, instead the enemies to actually act like goombas the enemies are actually going to pursue the player and the player needs to survive until the boss room is open, then when the player defeats the boss the unlimited mode is available which is going to lean heavily on the rogue like aspect of the game. 
+
+We can make room for improvement sure but this is a nice first step.
