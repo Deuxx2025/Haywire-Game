@@ -7,6 +7,7 @@ public class RangedAttack : MonoBehaviour
     private SpriteRenderer weaponRender;
     public Transform player;
     public Transform muzzle;
+    public float muzzleOffset = 0.492f;
     public float time; 
     public bool countdownReady;
     public float normal;
@@ -26,6 +27,7 @@ public class RangedAttack : MonoBehaviour
         if (pointDirection.x < 0)
         {
             normal = -1;
+           
         }
         else if (pointDirection.x > 0)
         {
@@ -33,6 +35,7 @@ public class RangedAttack : MonoBehaviour
         }
 
         gameObject.transform.position = new Vector3 (player.position.x + normal, player.position.y + yOffset, 0);
+        muzzle.transform.position = new Vector3 (muzzleOffset + normal * 2, player.position.y + yOffset, 0);
 
         if (countdownReady)
         {
@@ -61,6 +64,7 @@ public class RangedAttack : MonoBehaviour
         {
             bullet.transform.position = muzzle.transform.position;
             bullet.SetActive(true);
+            bullet.GetComponent<Bullet>().Fire(new Vector2(normal, 0));
         }
     }
 }
