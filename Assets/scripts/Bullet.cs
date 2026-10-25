@@ -10,4 +10,12 @@ public class Bullet : MonoBehaviour
         rb.linearVelocity = direction * speed;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
 }
