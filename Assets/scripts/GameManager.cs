@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject MeleeWeapon, RangedWeapon;
+    public GameObject MeleeWeapon, RangedWeapon; //Get the weapons GameObjects
     public bool swapWeapon;
     void Start()
     {
@@ -11,9 +11,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        //toggle logic
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            swapWeapon = !swapWeapon;
+            swapWeapon = !swapWeapon; 
         } 
         
         if (swapWeapon)
