@@ -7,14 +7,17 @@ public class GameManager : MonoBehaviour
     public GameObject MeleeWeapon, RangedWeapon; //Get the weapons GameObjects
     public List<GameObject> EnemyPool;
     public bool swapWeapon;
-    public Vector2 screenSize;
+    public Vector3 v3Pos;
     void Start()
     {
-        screenSize = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
+        
     }
 
     void Update()
     {
+
+        v3Pos = Camera.main.ViewportToWorldPoint(new Vector3(1.1f, 0.5f, 10.0f));
+        
         //toggle logic
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -42,6 +45,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(seconds);
             if (EnemyPool[i].activeSelf == false)
             {
+                EnemyPool[i].transform.position = new Vector3(v3Pos.x, v3Pos.y, 0);
                 EnemyPool[i].SetActive(true);
             }
         }

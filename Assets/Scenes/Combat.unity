@@ -1695,7 +1695,7 @@ MonoBehaviour:
   - {fileID: 1934753766}
   - {fileID: 30975674}
   swapWeapon: 0
-  screenSize: {x: 0, y: 0}
+  v3Pos: {x: 0, y: 0, z: 0}
 --- !u!4 &1334965258
 Transform:
   m_ObjectHideFlags: 0
