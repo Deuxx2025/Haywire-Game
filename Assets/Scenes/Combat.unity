@@ -1667,7 +1667,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1334965257
 MonoBehaviour:
@@ -1695,7 +1695,8 @@ MonoBehaviour:
   - {fileID: 1934753766}
   - {fileID: 30975674}
   swapWeapon: 0
-  v3Pos: {x: 0, y: 0, z: 0}
+  random: 0
+  screenPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1334965258
 Transform:
   m_ObjectHideFlags: 0

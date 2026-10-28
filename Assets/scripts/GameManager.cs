@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> EnemyPool;
     public bool swapWeapon;
     public int random;
-    public Vector3 v3Pos;
+    // public Vector3 v3Pos;
+    public Vector3 screenPos;
     void Start()
     {
         
@@ -16,8 +17,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
-        v3Pos = Camera.main.ViewportToWorldPoint(new Vector3(1.1f, 0.5f, 10.0f));
         
         //toggle logic
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -44,10 +43,10 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < EnemyPool.Count; i++)
         {
             yield return new WaitForSeconds(seconds);
-            GetRandomPosition();
             if (EnemyPool[i].activeSelf == false)
             {
-                EnemyPool[i].transform.position = new Vector3(v3Pos.x * random, v3Pos.y, 0);
+                GetRandomPosition();
+                EnemyPool[i].transform.position = screenPos;
                 EnemyPool[i].SetActive(true);
             }
         }
@@ -59,11 +58,15 @@ public class GameManager : MonoBehaviour
 
         if (randomIndex == 0)
         {
+            screenPos = Camera.main.ScreenToWorldPoint(new Vector3(-100, Screen.height, 0));
             random = -1;
         }
         else
         {
+            screenPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width + 100, Screen.height, 0));
             random = 1;
         }
+
+        screenPos = new Vector3(screenPos.x, screenPos.y, 0);
     }
 }
