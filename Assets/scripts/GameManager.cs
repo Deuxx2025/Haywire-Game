@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject MeleeWeapon, RangedWeapon; //Get the weapons GameObjects
     public List<GameObject> EnemyPool;
     public bool swapWeapon;
+    public int random;
     public Vector3 v3Pos;
     void Start()
     {
@@ -43,11 +44,26 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < EnemyPool.Count; i++)
         {
             yield return new WaitForSeconds(seconds);
+            GetRandomPosition();
             if (EnemyPool[i].activeSelf == false)
             {
-                EnemyPool[i].transform.position = new Vector3(v3Pos.x, v3Pos.y, 0);
+                EnemyPool[i].transform.position = new Vector3(v3Pos.x * random, v3Pos.y, 0);
                 EnemyPool[i].SetActive(true);
             }
+        }
+    }
+
+    public void GetRandomPosition()
+    {
+        int randomIndex = Random.Range(0, 2);
+
+        if (randomIndex == 0)
+        {
+            random = -1;
+        }
+        else
+        {
+            random = 1;
         }
     }
 }
