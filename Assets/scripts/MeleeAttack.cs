@@ -58,6 +58,16 @@ public class PlayerAttack : MonoBehaviour
     //collider check
     public void OnTriggerEnter2D(Collider2D collider)
     {
+        if (collider.gameObject.CompareTag("Player"))
+        {
+            print("This has collided with the player");
+        }
+
+        if (collider.gameObject.CompareTag("Enemy"))
+        {
+            print("This has collided with the Enemy");
+        }
+
         print("the player has attacked something");
     }
 }
