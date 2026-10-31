@@ -3,6 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 5f; //speed of the bullet
+    public int damage = 5;
     public Rigidbody2D rb; //rigidBody of the bullet
 
     //function that is used to set the direction upon runtime
@@ -24,5 +25,4 @@ public class Bullet : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
 }

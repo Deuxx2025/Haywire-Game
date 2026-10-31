@@ -5,6 +5,7 @@ public class MeowlMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     public float xInput;
+    public int hp = 3;
 
     [Header("Speed")]
     public float minSpeed = 5;
@@ -46,6 +47,11 @@ public class MeowlMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        }
+
+        if (hp <= 0)
+        {
+            gameObject.SetActive(false);
         }
     }
 

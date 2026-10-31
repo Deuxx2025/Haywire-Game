@@ -6,9 +6,11 @@ public class PlayerAttack : MonoBehaviour
     private SpriteRenderer weaponRender;    //getting the visual of the game object
     private Collider2D weaponCollider;  //getting the collider of the game object
     public Transform player;    //player location
+    public EnemyScript Enemy;
     public float time;  //number to keep the object active for a while
     public bool countdownReady; //boolean to help with the time logic
     public float normal;    //force a normalize value for the trasform
+    public int damage = 1;
     public Vector2 mousePos, characterPos, pointDirection;  //Vector 2 for mouse, player and direction location
     
     void Start()

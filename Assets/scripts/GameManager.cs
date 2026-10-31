@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject MeleeWeapon, RangedWeapon; //Get the weapons GameObjects
     public List<GameObject> EnemyPool;
+    //public 
     public bool swapWeapon;
     public int random;
     // public Vector3 v3Pos;

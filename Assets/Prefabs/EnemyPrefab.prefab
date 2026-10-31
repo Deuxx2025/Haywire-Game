@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9173693082039924739}
   - component: {fileID: 6344044402615365723}
   - component: {fileID: 2519588878418540097}
+  - component: {fileID: -4720745872315808518}
   m_Layer: 0
   m_Name: EnemyPrefab
   m_TagString: Enemy
@@ -157,3 +158,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-4720745872315808518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534665854676542903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f536d0f36984149b9ddbf69d52de17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  hp: 1
+  damage: 1
+  Bullet: {fileID: 3421477950859846912, guid: 16551dc513d17ba4b9bb322247384ac1, type: 3}
