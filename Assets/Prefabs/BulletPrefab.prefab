@@ -181,5 +181,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   speed: 24
   damage: 5
-  Enemy: {fileID: 0}
   rb: {fileID: 8317867204698353674}
+  Enemy: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}

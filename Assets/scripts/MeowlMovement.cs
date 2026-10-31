@@ -6,6 +6,7 @@ public class MeowlMovement : MonoBehaviour
 
     public float xInput;
     public int hp = 3;
+    public Enemy Enemy;
 
     [Header("Speed")]
     public float minSpeed = 5;
@@ -134,5 +135,13 @@ public class MeowlMovement : MonoBehaviour
         currentMax = baseMaxSpeed;
         boostsDone = 0;
         boostTimer = 0;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            hp -= Enemy.damage;
+        }
     }
 }

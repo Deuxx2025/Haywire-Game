@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
     public float speed = 5f; //speed of the bullet
     public int damage = 5;
     public Rigidbody2D rb; //rigidBody of the bullet
+    public Enemy Enemy;
 
     //function that is used to set the direction upon runtime
     public void Fire(Vector2 direction)
