@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 183662990}
   - component: {fileID: 183662989}
   - component: {fileID: 183662988}
+  - component: {fileID: 183662992}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Enemy
@@ -400,6 +401,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &183662992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183662987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f536d0f36984149b9ddbf69d52de17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  maxHp: 1
+  hp: 1
+  damage: 1
+  Bullet: {fileID: 3421477950859846912, guid: 16551dc513d17ba4b9bb322247384ac1, type: 3}
+  MeleeAttack: {fileID: 2070576182}
 --- !u!1001 &256712207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -408,6 +426,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 496389709}
     m_Modifications:
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: MeleeAttack
+      value: 
+      objectReference: {fileID: 2070576182}
     - target: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: m_Name
       value: EnemyPrefab (1)
@@ -612,6 +634,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 496389709}
     m_Modifications:
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: MeleeAttack
+      value: 
+      objectReference: {fileID: 2070576182}
     - target: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: m_Name
       value: EnemyPrefab (9)
@@ -683,6 +709,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 496389709}
     m_Modifications:
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: MeleeAttack
+      value: 
+      objectReference: {fileID: 2070576182}
     - target: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: m_Name
       value: EnemyPrefab (3)
@@ -749,6 +779,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 496389709}
     m_Modifications:
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: MeleeAttack
+      value: 
+      objectReference: {fileID: 2070576182}
     - target: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: m_Name
       value: EnemyPrefab (8)
@@ -856,6 +890,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 496389709}
     m_Modifications:
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: MeleeAttack
+      value: 
+      objectReference: {fileID: 2070576182}
     - target: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: m_Name
       value: EnemyPrefab
@@ -927,6 +965,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 496389709}
     m_Modifications:
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: MeleeAttack
+      value: 
+      objectReference: {fileID: 2070576182}
     - target: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: m_Name
       value: EnemyPrefab (6)
@@ -993,6 +1035,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 496389709}
     m_Modifications:
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: MeleeAttack
+      value: 
+      objectReference: {fileID: 2070576182}
     - target: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: m_Name
       value: EnemyPrefab (5)
@@ -1226,6 +1272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MeowlMovement
   rb: {fileID: 0}
   xInput: 0
+  hp: 3
+  Enemy: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   minSpeed: 5
   baseMaxSpeed: 15
   accelRate: 5
@@ -1385,6 +1433,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 496389709}
     m_Modifications:
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: MeleeAttack
+      value: 
+      objectReference: {fileID: 2070576182}
     - target: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: m_Name
       value: EnemyPrefab (2)
@@ -1451,6 +1503,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 496389709}
     m_Modifications:
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: MeleeAttack
+      value: 
+      objectReference: {fileID: 2070576182}
     - target: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: m_Name
       value: EnemyPrefab (7)
@@ -2050,6 +2106,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 496389709}
     m_Modifications:
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: MeleeAttack
+      value: 
+      objectReference: {fileID: 2070576182}
     - target: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: m_Name
       value: EnemyPrefab (4)
@@ -2122,7 +2182,7 @@ GameObject:
   - component: {fileID: 2070576182}
   m_Layer: 0
   m_Name: MeleeWeapon
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2263,6 +2323,7 @@ MonoBehaviour:
   time: 0
   countdownReady: 0
   normal: 0
+  damage: 1
   mousePos: {x: 0, y: 0}
   characterPos: {x: 0, y: 0}
   pointDirection: {x: 0, y: 0}
@@ -2283,6 +2344,7 @@ GameObject:
   - component: {fileID: 2117307354}
   - component: {fileID: 2117307353}
   - component: {fileID: 2117307352}
+  - component: {fileID: 2117307356}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -2427,6 +2489,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2117307356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117307351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f536d0f36984149b9ddbf69d52de17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  maxHp: 1
+  hp: 1
+  damage: 1
+  Bullet: {fileID: 3421477950859846912, guid: 16551dc513d17ba4b9bb322247384ac1, type: 3}
+  MeleeAttack: {fileID: 2070576182}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
