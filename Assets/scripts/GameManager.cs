@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha3))
         {
             Companion.SetActive(true);
+            StartCoroutine(CompanionAction(15));
         }
     }
 
@@ -72,5 +73,11 @@ public class GameManager : MonoBehaviour
         }
 
         screenPos = new Vector3(screenPos.x, screenPos.y, 0);
+    }
+
+    public IEnumerator CompanionAction(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Companion.SetActive(false);
     }
 }
