@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject MeleeWeapon, RangedWeapon; //Get the weapons GameObjects
+    public GameObject MeleeWeapon, RangedWeapon, Companion; //Get the weapons GameObjects
     public List<GameObject> EnemyPool; 
     public bool swapWeapon;
     public int random;
@@ -35,6 +35,11 @@ public class GameManager : MonoBehaviour
         }
 
         StartCoroutine(InstantiateEnemies(3f));
+
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            Companion.SetActive(true);
+        }
     }
 
     public IEnumerator InstantiateEnemies(float seconds)
