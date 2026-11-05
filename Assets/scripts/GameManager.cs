@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject MeleeWeapon, RangedWeapon, Companion; //Get the weapons GameObjects
+    public GameObject MeleeWeapon, RangedWeapon, Companion, Player; //Get the weapons GameObjects
     public List<GameObject> EnemyPool; 
     public bool swapWeapon;
-    public int random;
     public Vector3 screenPos;
     void Start()
     {
@@ -36,9 +35,10 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(InstantiateEnemies(3f));
 
-        if (Input.GetKey(KeyCode.Alpha3))
+        if (Input.GetKey(KeyCode.Alpha3) && Companion.activeSelf == false)
         {
             Companion.SetActive(true);
+            Companion.transform.position = new Vector3(Player.transform.position.x + 3, Player.transform.position.y, 0);
             StartCoroutine(CompanionAction(15));
         }
     }
@@ -63,13 +63,11 @@ public class GameManager : MonoBehaviour
 
         if (randomIndex == 0)
         {
-            screenPos = Camera.main.ScreenToWorldPoint(new Vector3(-100, Screen.height, 0));
-            random = -1;
+            screenPos = Camera.main.ScreenToWorldPoint(new Vector3(-100, Screen.height, 0));   
         }
         else
         {
             screenPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width + 100, Screen.height, 0));
-            random = 1;
         }
 
         screenPos = new Vector3(screenPos.x, screenPos.y, 0);

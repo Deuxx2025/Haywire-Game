@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public int damage = 1;
     public Bullet Bullet;
     public PlayerAttack MeleeAttack;
+    public Companion Pet;
 
     void Start()
     {
@@ -32,6 +33,11 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             hp -= Bullet.damage;
+        } 
+
+        if (collision.gameObject.CompareTag("Companion"))
+        {
+            hp -= Pet.damage;
         } 
     }
 

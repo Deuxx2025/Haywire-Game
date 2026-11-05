@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Bullet
   - Weapon
+  - Companion
   layers:
   - Default
   - TransparentFX
