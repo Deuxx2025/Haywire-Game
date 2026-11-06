@@ -10,7 +10,14 @@ public class RangedAttack : MonoBehaviour
     public bool countdownReady; //boolean to help with the time logic
     public float normal;    //force a normalize value for the trasform
     public float yOffset = 0.282f;  //offset of the ranged weapon to be at the 'head' of the player
+    public int bulletsLeft;
+    public int maxBullets = 2;
     public Vector2 mousePos, characterPos, pointDirection;  //Vector 2 for mouse, player and direction location
+
+    void Awake()
+    {
+        bulletsLeft = maxBullets;
+    }
 
     void Update()
     {
@@ -37,9 +44,10 @@ public class RangedAttack : MonoBehaviour
             cooldown -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && cooldown == 2)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && cooldown == 2 && bulletsLeft > 0)
         {
             Shoot();
+            bulletsLeft--;
             countdownReady = true;
         }
         else if (cooldown <= 0)
@@ -47,6 +55,8 @@ public class RangedAttack : MonoBehaviour
             cooldown = 2;
             countdownReady = false;
         }
+
+        ReloadGun();
     }
 
     //method to place the bullets on the muzzle
@@ -59,6 +69,14 @@ public class RangedAttack : MonoBehaviour
             bullet.transform.position = muzzle.transform.position;  //placing the bullet at the muzzle
             bullet.SetActive(true); //activating the object for the Bullet script to run
             bullet.GetComponent<Bullet>().Fire(new Vector2(normal, 0)); //giving the direction to the Bullet script
+        }
+    }
+
+    public void ReloadGun()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < maxBullets)
+        {
+            bulletsLeft = maxBullets;
         }
     }
 }

@@ -182,6 +182,8 @@ MonoBehaviour:
   countdownReady: 0
   normal: 0
   yOffset: 0.282
+  bulletsLeft: 0
+  maxBullets: 2
   mousePos: {x: 0, y: 0}
   characterPos: {x: 0, y: 0}
   pointDirection: {x: 0, y: 0}
@@ -1676,7 +1678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc53a848e0ea684595c9a7040920bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletPool
-  amountToPool: 2
+  amountToPool: 10
   bulletPrefab: {fileID: 9192380261730936776, guid: 16551dc513d17ba4b9bb322247384ac1, type: 3}
 --- !u!1 &1530865156
 GameObject:
