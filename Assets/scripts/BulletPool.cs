@@ -6,7 +6,8 @@ public class BulletPool : MonoBehaviour
 
     public static BulletPool instance;  //singleton to access this script accross all the scenes
     private List<GameObject> pooledBullets = new List<GameObject>();    //list of type GameObject for the bullets
-    private int amountToPool = 10;  //amount of maximum capacity of bullets
+    [Header("Set bullet amount")]
+    [SerializeField] private int amountToPool = 10;  //amount of maximum capacity of bullets
 
     [SerializeField] private GameObject bulletPrefab;   //bullet prefab GameObject
 

@@ -178,7 +178,7 @@ MonoBehaviour:
   player: {fileID: 763257308}
   muzzle: {fileID: 844504542}
   muzzleOffset: 0
-  time: 0
+  cooldown: 2
   countdownReady: 0
   normal: 0
   yOffset: 0.282
@@ -1676,6 +1676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc53a848e0ea684595c9a7040920bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletPool
+  amountToPool: 2
   bulletPrefab: {fileID: 9192380261730936776, guid: 16551dc513d17ba4b9bb322247384ac1, type: 3}
 --- !u!1 &1530865156
 GameObject:
