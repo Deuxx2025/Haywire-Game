@@ -5,7 +5,7 @@ public class MeowlMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     public float xInput;
-    public int hp = 3;
+    public float hp = 3f;
     public Enemy Enemy;
 
     [Header("Speed")]

@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject MeleeWeapon, RangedWeapon, Companion, Player; //Get the weapons GameObjects
+    public GameObject MeleeWeapon, RangedWeapon, Companion, Player; //Get the GameObjects
     public List<GameObject> EnemyPool; 
     public bool swapWeapon;
     public Vector3 screenPos;
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
