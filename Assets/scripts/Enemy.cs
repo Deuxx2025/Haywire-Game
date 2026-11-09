@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     public int hp = 1;
     public int damage = 1;
     public float speed = 2f;
-    public Transform Player; 
     public Bullet Bullet;
     public PlayerAttack MeleeAttack;
     public Companion Pet;
@@ -31,11 +30,6 @@ public class Enemy : MonoBehaviour
             hp = maxHp;
         }
 
-        Vector2 direction = (Vector3)Player.position - transform.position;
-
-        //float distance = direction.magnitude;
-
-        _rb.linearVelocity = direction.normalized * speed;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
