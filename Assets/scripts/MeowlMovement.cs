@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MeowlMovement : MonoBehaviour
 {
@@ -53,6 +54,7 @@ public class MeowlMovement : MonoBehaviour
         if (hp <= 0)
         {
             gameObject.SetActive(false);
+            SceneManager.LoadScene("MainMenu");
         }
     }
 

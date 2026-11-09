@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
         if (hp <= 0)
         {
             gameObject.SetActive(false);
+            DataManager.Instance.points++;
         }
 
         if (gameObject.activeSelf == false)
