@@ -7,6 +7,7 @@ public class RangedAttack : MonoBehaviour
     public Transform muzzle;    //muzzle location
     public float muzzleOffset = 0.492f; //offset value to put the muzzle at the tip of the object
     public float cooldown = 2;  //cooldown for the next shot      
+    public float fireRate = 2;
     public bool countdownReady; //boolean to help with the time logic
     public float normal;    //force a normalize value for the trasform
     public float yOffset = 0.282f;  //offset of the ranged weapon to be at the 'head' of the player
@@ -17,6 +18,7 @@ public class RangedAttack : MonoBehaviour
     void Awake()
     {
         bulletsLeft = maxBullets;
+        cooldown = fireRate;
     }
 
     void Update()
@@ -44,7 +46,7 @@ public class RangedAttack : MonoBehaviour
             cooldown -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && cooldown == 2 && bulletsLeft > 0)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && cooldown == fireRate && bulletsLeft > 0)
         {
             Shoot();
             bulletsLeft--;
@@ -52,7 +54,7 @@ public class RangedAttack : MonoBehaviour
         }
         else if (cooldown <= 0)
         {
-            cooldown = 2;
+            cooldown = fireRate;
             countdownReady = false;
         }
 

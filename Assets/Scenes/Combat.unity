@@ -179,6 +179,7 @@ MonoBehaviour:
   muzzle: {fileID: 844504542}
   muzzleOffset: 0
   cooldown: 2
+  fireRate: 1.5
   countdownReady: 0
   normal: 0
   yOffset: 0.282
@@ -317,7 +318,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 950538589}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &256712208 stripped
 Transform:
@@ -533,13 +537,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 352524862}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &352524857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8050690127319092084, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   m_PrefabInstance: {fileID: 352524856}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &352524862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30975674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8d958b1d466f45b8983430f7781f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteeringAgent
+  target: {fileID: 763257308}
+  behavior: 0
+  detectionRadius: 600
+  maxSpeed: 5
+  maxForce: 20
+  slowingRadius: 3
+  stopDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 12
+  jumpCooldown: 0.4
+  obstacleCheckDistance: 0.6
+  maxObstacleHeight: 2
+  wanderNodes: []
+  nodeReachDistance: 0.3
+  wanderSpeedMultiplier: 0.5
+  pauseAtNode: 1
+  maxPredictionTime: 1
 --- !u!1 &352688542 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
@@ -616,7 +654,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 514689738}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &422758768 stripped
 Transform:
@@ -694,7 +735,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1934753771}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &452317255 stripped
 Transform:
@@ -813,18 +857,83 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 499043204}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &499043199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8050690127319092084, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   m_PrefabInstance: {fileID: 499043198}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &499043204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148806587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8d958b1d466f45b8983430f7781f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteeringAgent
+  target: {fileID: 763257308}
+  behavior: 0
+  detectionRadius: 600
+  maxSpeed: 5
+  maxForce: 20
+  slowingRadius: 3
+  stopDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 12
+  jumpCooldown: 0.4
+  obstacleCheckDistance: 0.6
+  maxObstacleHeight: 2
+  wanderNodes: []
+  nodeReachDistance: 0.3
+  wanderSpeedMultiplier: 0.5
+  pauseAtNode: 1
+  maxPredictionTime: 1
 --- !u!1 &514689733 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   m_PrefabInstance: {fileID: 422758767}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &514689738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514689733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8d958b1d466f45b8983430f7781f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteeringAgent
+  target: {fileID: 763257308}
+  behavior: 0
+  detectionRadius: 600
+  maxSpeed: 5
+  maxForce: 20
+  slowingRadius: 3
+  stopDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 12
+  jumpCooldown: 0.4
+  obstacleCheckDistance: 0.6
+  maxObstacleHeight: 2
+  wanderNodes: []
+  nodeReachDistance: 0.3
+  wanderSpeedMultiplier: 0.5
+  pauseAtNode: 1
+  maxPredictionTime: 1
 --- !u!1001 &606229889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -896,7 +1005,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 816151008}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &606229890 stripped
 Transform:
@@ -974,7 +1086,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1955394568}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &704469480 stripped
 Transform:
@@ -1157,7 +1272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MeowlMovement
   rb: {fileID: 0}
   xInput: 0
-  hp: 3
+  hp: 100
   Enemy: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   minSpeed: 5
   baseMaxSpeed: 15
@@ -1274,6 +1389,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   m_PrefabInstance: {fileID: 606229889}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &816151008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816151003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8d958b1d466f45b8983430f7781f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteeringAgent
+  target: {fileID: 763257308}
+  behavior: 0
+  detectionRadius: 600
+  maxSpeed: 5
+  maxForce: 20
+  slowingRadius: 3
+  stopDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 12
+  jumpCooldown: 0.4
+  obstacleCheckDistance: 0.6
+  maxObstacleHeight: 2
+  wanderNodes: []
+  nodeReachDistance: 0.3
+  wanderSpeedMultiplier: 0.5
+  pauseAtNode: 1
+  maxPredictionTime: 1
 --- !u!1 &844504541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,6 +1456,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   m_PrefabInstance: {fileID: 256712207}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &950538589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950538584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8d958b1d466f45b8983430f7781f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteeringAgent
+  target: {fileID: 763257308}
+  behavior: 0
+  detectionRadius: 600
+  maxSpeed: 5
+  maxForce: 20
+  slowingRadius: 3
+  stopDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 12
+  jumpCooldown: 0.4
+  obstacleCheckDistance: 0.6
+  maxObstacleHeight: 2
+  wanderNodes: []
+  nodeReachDistance: 0.3
+  wanderSpeedMultiplier: 0.5
+  pauseAtNode: 1
+  maxPredictionTime: 1
 --- !u!1001 &979136798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1381,7 +1558,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2108217275}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &979136799 stripped
 Transform:
@@ -1459,7 +1639,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1216316258}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &1131976328 stripped
 Transform:
@@ -1471,6 +1654,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   m_PrefabInstance: {fileID: 1131976327}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1216316258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216316253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8d958b1d466f45b8983430f7781f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteeringAgent
+  target: {fileID: 763257308}
+  behavior: 0
+  detectionRadius: 600
+  maxSpeed: 5
+  maxForce: 20
+  slowingRadius: 3
+  stopDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 12
+  jumpCooldown: 0.4
+  obstacleCheckDistance: 0.6
+  maxObstacleHeight: 2
+  wanderNodes: []
+  nodeReachDistance: 0.3
+  wanderSpeedMultiplier: 0.5
+  pauseAtNode: 1
+  maxPredictionTime: 1
 --- !u!1 &1243939403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,7 +1867,12 @@ MonoBehaviour:
   - {fileID: 1216316253}
   - {fileID: 1934753766}
   - {fileID: 30975674}
+  enemiesCalled: 0
+  maxCoolDown: 10
+  coolDown: 25
   swapWeapon: 0
+  stopEnemies: 0
+  cooldownReady: 0
   screenPos: {x: 0, y: 0, z: 0}
 --- !u!4 &1334965258
 Transform:
@@ -1867,6 +2086,7 @@ GameObject:
   - component: {fileID: 1618566051}
   - component: {fileID: 1618566050}
   - component: {fileID: 1618566049}
+  - component: {fileID: 1618566054}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Companion
@@ -2031,6 +2251,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1618566054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618566048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8d958b1d466f45b8983430f7781f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteeringAgent
+  target: {fileID: 0}
+  behavior: 0
+  detectionRadius: 600
+  maxSpeed: 5
+  maxForce: 20
+  slowingRadius: 3
+  stopDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 12
+  jumpCooldown: 0.4
+  obstacleCheckDistance: 0.6
+  maxObstacleHeight: 2
+  wanderNodes: []
+  nodeReachDistance: 0.3
+  wanderSpeedMultiplier: 0.5
+  pauseAtNode: 1
+  maxPredictionTime: 1
 --- !u!1 &1704341915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,11 +2424,73 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   m_PrefabInstance: {fileID: 452317254}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1934753771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934753766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8d958b1d466f45b8983430f7781f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteeringAgent
+  target: {fileID: 763257308}
+  behavior: 0
+  detectionRadius: 600
+  maxSpeed: 5
+  maxForce: 20
+  slowingRadius: 3
+  stopDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 12
+  jumpCooldown: 0.4
+  obstacleCheckDistance: 0.6
+  maxObstacleHeight: 2
+  wanderNodes: []
+  nodeReachDistance: 0.3
+  wanderSpeedMultiplier: 0.5
+  pauseAtNode: 1
+  maxPredictionTime: 1
 --- !u!1 &1955394563 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   m_PrefabInstance: {fileID: 704469479}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1955394568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955394563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8d958b1d466f45b8983430f7781f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteeringAgent
+  target: {fileID: 763257308}
+  behavior: 0
+  detectionRadius: 600
+  maxSpeed: 5
+  maxForce: 20
+  slowingRadius: 3
+  stopDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 12
+  jumpCooldown: 0.4
+  obstacleCheckDistance: 0.6
+  maxObstacleHeight: 2
+  wanderNodes: []
+  nodeReachDistance: 0.3
+  wanderSpeedMultiplier: 0.5
+  pauseAtNode: 1
+  maxPredictionTime: 1
 --- !u!1001 &2065447199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2249,13 +2562,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2065447205}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &2065447200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8050690127319092084, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   m_PrefabInstance: {fileID: 2065447199}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2065447205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352688542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8d958b1d466f45b8983430f7781f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteeringAgent
+  target: {fileID: 763257308}
+  behavior: 0
+  detectionRadius: 600
+  maxSpeed: 5
+  maxForce: 20
+  slowingRadius: 3
+  stopDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 12
+  jumpCooldown: 0.4
+  obstacleCheckDistance: 0.6
+  maxObstacleHeight: 2
+  wanderNodes: []
+  nodeReachDistance: 0.3
+  wanderSpeedMultiplier: 0.5
+  pauseAtNode: 1
+  maxPredictionTime: 1
 --- !u!1 &2070576178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2420,6 +2767,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   m_PrefabInstance: {fileID: 979136798}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2108217275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108217270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8d958b1d466f45b8983430f7781f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteeringAgent
+  target: {fileID: 763257308}
+  behavior: 0
+  detectionRadius: 600
+  maxSpeed: 5
+  maxForce: 20
+  slowingRadius: 3
+  stopDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 12
+  jumpCooldown: 0.4
+  obstacleCheckDistance: 0.6
+  maxObstacleHeight: 2
+  wanderNodes: []
+  nodeReachDistance: 0.3
+  wanderSpeedMultiplier: 0.5
+  pauseAtNode: 1
+  maxPredictionTime: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
