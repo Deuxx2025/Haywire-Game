@@ -1,13 +1,16 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject MeleeWeapon, RangedWeapon, Companion, Player; //Get the GameObjects
     public List<GameObject> EnemyPool; 
     public int enemiesCalled;
-    public bool swapWeapon, stopEnemies;
+    public float maxCoolDown;
+    public float coolDown;
+    public bool swapWeapon, stopEnemies, cooldownReady;
     public Vector3 screenPos;
 
     void Update()
@@ -34,10 +37,12 @@ public class GameManager : MonoBehaviour
         if (stopEnemies)
         {
             StopCoroutine("InstantiateEnemies");
+            RoundChange();
         }
         else
         {
             StartCoroutine(InstantiateEnemies(1f));
+            coolDown = maxCoolDown;
         }
 
         if (Input.GetKey(KeyCode.Alpha3) && Companion.activeSelf == false)
@@ -46,16 +51,12 @@ public class GameManager : MonoBehaviour
             Companion.transform.position = new Vector3(Player.transform.position.x + 3, Player.transform.position.y, 0);
             StartCoroutine(CompanionAction(15));
         }
-        print(enemiesCalled);
     }
 
     public IEnumerator InstantiateEnemies(float seconds)
     {
         for (int i = 0; i < EnemyPool.Count; i++)
         {
-
-            
-
             yield return new WaitForSeconds(seconds);
             if (EnemyPool[i].activeSelf == false)
             {
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
                 enemiesCalled++;
             }
 
-            if (enemiesCalled > EnemyPool.Count)
+            if (enemiesCalled >= EnemyPool.Count)
             {
                 stopEnemies = true;
             }
@@ -87,6 +88,36 @@ public class GameManager : MonoBehaviour
 
         screenPos = new Vector3(screenPos.x, screenPos.y, 0);
     }
+
+    public void RoundChange()
+    {
+
+        if (cooldownReady)
+        {
+            coolDown -= Time.deltaTime;
+        }
+
+        if (AreAllEnemiesInactive())
+        {
+            cooldownReady = true;
+        }
+
+        if (coolDown <= 0)
+        {
+            cooldownReady = false;
+            enemiesCalled = 0;
+            stopEnemies = false;
+        }
+    }
+
+    bool AreAllEnemiesInactive(){
+	    foreach(GameObject enemy in EnemyPool) {
+		    if(enemy.activeSelf) {
+			    return false;
+		    }
+	    }
+	return true;
+}
 
     public IEnumerator CompanionAction(float seconds)
     {
