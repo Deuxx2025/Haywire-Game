@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public GameObject MeleeWeapon, RangedWeapon, Companion, Player; //Get the GameObjects
     public List<GameObject> EnemyPool; 
-    public bool swapWeapon;
+    public int enemiesCalled;
+    public bool swapWeapon, stopEnemies;
     public Vector3 screenPos;
 
     void Update()
@@ -29,7 +30,15 @@ public class GameManager : MonoBehaviour
             MeleeWeapon.SetActive(true);
         }
 
-        StartCoroutine(InstantiateEnemies(3f));
+
+        if (stopEnemies)
+        {
+            StopCoroutine("InstantiateEnemies");
+        }
+        else
+        {
+            StartCoroutine(InstantiateEnemies(1f));
+        }
 
         if (Input.GetKey(KeyCode.Alpha3) && Companion.activeSelf == false)
         {
@@ -37,18 +46,28 @@ public class GameManager : MonoBehaviour
             Companion.transform.position = new Vector3(Player.transform.position.x + 3, Player.transform.position.y, 0);
             StartCoroutine(CompanionAction(15));
         }
+        print(enemiesCalled);
     }
 
     public IEnumerator InstantiateEnemies(float seconds)
     {
         for (int i = 0; i < EnemyPool.Count; i++)
         {
+
+            
+
             yield return new WaitForSeconds(seconds);
             if (EnemyPool[i].activeSelf == false)
             {
                 GetRandomPosition();
                 EnemyPool[i].transform.position = screenPos;
                 EnemyPool[i].SetActive(true);
+                enemiesCalled++;
+            }
+
+            if (enemiesCalled > EnemyPool.Count)
+            {
+                stopEnemies = true;
             }
         }
     }
