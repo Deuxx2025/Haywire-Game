@@ -187,6 +187,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 297761703447499198, guid: 79885496eca5c404eb62e9a91db8d30d, type: 3}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -194,6 +206,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 45796703}
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 45796708}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &45796701 stripped
 Transform:
@@ -220,7 +235,7 @@ MonoBehaviour:
   target: {fileID: 366307500}
   behavior: 5
   detectionRadius: 600
-  maxSpeed: 10
+  maxSpeed: 7
   maxForce: 20
   slowingRadius: 3
   stopDistance: 0.1
@@ -236,6 +251,24 @@ MonoBehaviour:
   wanderSpeedMultiplier: 0.5
   pauseAtNode: 1
   maxPredictionTime: 1
+--- !u!212 &45796707 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+  m_PrefabInstance: {fileID: 45796700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &45796708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45796702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e7f5d11bf24ac4cb4370325cca743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  spriteRenderer: {fileID: 45796707}
 --- !u!1 &178340658
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +514,7 @@ MonoBehaviour:
   target: {fileID: 366307500}
   behavior: 5
   detectionRadius: 600
-  maxSpeed: 10
+  maxSpeed: 7
   maxForce: 20
   slowingRadius: 3
   stopDistance: 0.1
@@ -497,6 +530,24 @@ MonoBehaviour:
   wanderSpeedMultiplier: 0.5
   pauseAtNode: 1
   maxPredictionTime: 1
+--- !u!212 &202794350 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+  m_PrefabInstance: {fileID: 586152852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &202794351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202794340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e7f5d11bf24ac4cb4370325cca743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  spriteRenderer: {fileID: 202794350}
 --- !u!1 &329127486
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   rb: {fileID: 0}
   xInput: 0
-  hp: 3
+  hp: 10
   Enemy: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   minSpeed: 5
   baseMaxSpeed: 15
@@ -983,6 +1034,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 297761703447499198, guid: 79885496eca5c404eb62e9a91db8d30d, type: 3}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -990,6 +1053,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 366588363}
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 366588368}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &366588361 stripped
 Transform:
@@ -1016,7 +1082,7 @@ MonoBehaviour:
   target: {fileID: 366307500}
   behavior: 5
   detectionRadius: 600
-  maxSpeed: 10
+  maxSpeed: 7
   maxForce: 20
   slowingRadius: 3
   stopDistance: 0.1
@@ -1032,6 +1098,24 @@ MonoBehaviour:
   wanderSpeedMultiplier: 0.5
   pauseAtNode: 1
   maxPredictionTime: 1
+--- !u!212 &366588367 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+  m_PrefabInstance: {fileID: 366588360}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &366588368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366588362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e7f5d11bf24ac4cb4370325cca743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  spriteRenderer: {fileID: 366588367}
 --- !u!1 &397769866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1381,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 297761703447499198, guid: 79885496eca5c404eb62e9a91db8d30d, type: 3}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1304,6 +1400,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 508269201}
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 508269206}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &508269199 stripped
 Transform:
@@ -1330,7 +1429,7 @@ MonoBehaviour:
   target: {fileID: 366307500}
   behavior: 5
   detectionRadius: 600
-  maxSpeed: 10
+  maxSpeed: 7
   maxForce: 20
   slowingRadius: 3
   stopDistance: 0.1
@@ -1346,6 +1445,24 @@ MonoBehaviour:
   wanderSpeedMultiplier: 0.5
   pauseAtNode: 1
   maxPredictionTime: 1
+--- !u!212 &508269205 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+  m_PrefabInstance: {fileID: 508269198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &508269206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508269200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e7f5d11bf24ac4cb4370325cca743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  spriteRenderer: {fileID: 508269205}
 --- !u!1001 &586152852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1357,6 +1474,14 @@ PrefabInstance:
     - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: Pet
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: damage
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: MeleeAttack
@@ -1414,6 +1539,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 297761703447499198, guid: 79885496eca5c404eb62e9a91db8d30d, type: 3}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1421,6 +1558,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 202794346}
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 202794351}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!1 &611354007
 GameObject:
@@ -1823,6 +1963,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 297761703447499198, guid: 79885496eca5c404eb62e9a91db8d30d, type: 3}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1830,6 +1982,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 794069433}
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 794069438}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &794069431 stripped
 Transform:
@@ -1856,7 +2011,7 @@ MonoBehaviour:
   target: {fileID: 366307500}
   behavior: 5
   detectionRadius: 600
-  maxSpeed: 10
+  maxSpeed: 7
   maxForce: 20
   slowingRadius: 3
   stopDistance: 0.1
@@ -1872,6 +2027,24 @@ MonoBehaviour:
   wanderSpeedMultiplier: 0.5
   pauseAtNode: 1
   maxPredictionTime: 1
+--- !u!212 &794069437 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+  m_PrefabInstance: {fileID: 794069430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &794069438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794069432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e7f5d11bf24ac4cb4370325cca743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  spriteRenderer: {fileID: 794069437}
 --- !u!1001 &899039398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1940,6 +2113,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 297761703447499198, guid: 79885496eca5c404eb62e9a91db8d30d, type: 3}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1947,6 +2132,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 899039401}
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 899039406}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &899039399 stripped
 Transform:
@@ -1973,7 +2161,7 @@ MonoBehaviour:
   target: {fileID: 366307500}
   behavior: 5
   detectionRadius: 600
-  maxSpeed: 10
+  maxSpeed: 7
   maxForce: 20
   slowingRadius: 3
   stopDistance: 0.1
@@ -1989,6 +2177,24 @@ MonoBehaviour:
   wanderSpeedMultiplier: 0.5
   pauseAtNode: 1
   maxPredictionTime: 1
+--- !u!212 &899039405 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+  m_PrefabInstance: {fileID: 899039398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &899039406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899039400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e7f5d11bf24ac4cb4370325cca743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  spriteRenderer: {fileID: 899039405}
 --- !u!1001 &1076359271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2057,6 +2263,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 297761703447499198, guid: 79885496eca5c404eb62e9a91db8d30d, type: 3}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2064,6 +2286,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1076359274}
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1076359279}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &1076359272 stripped
 Transform:
@@ -2090,7 +2315,7 @@ MonoBehaviour:
   target: {fileID: 366307500}
   behavior: 5
   detectionRadius: 600
-  maxSpeed: 10
+  maxSpeed: 7
   maxForce: 20
   slowingRadius: 3
   stopDistance: 0.1
@@ -2106,6 +2331,24 @@ MonoBehaviour:
   wanderSpeedMultiplier: 0.5
   pauseAtNode: 1
   maxPredictionTime: 1
+--- !u!212 &1076359278 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+  m_PrefabInstance: {fileID: 1076359271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1076359279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076359273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e7f5d11bf24ac4cb4370325cca743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  spriteRenderer: {fileID: 1076359278}
 --- !u!1 &1099815417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,6 +3074,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 297761703447499198, guid: 79885496eca5c404eb62e9a91db8d30d, type: 3}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2838,6 +3097,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1570590939}
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1570590944}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &1570590937 stripped
 Transform:
@@ -2864,7 +3126,7 @@ MonoBehaviour:
   target: {fileID: 366307500}
   behavior: 5
   detectionRadius: 600
-  maxSpeed: 10
+  maxSpeed: 7
   maxForce: 20
   slowingRadius: 3
   stopDistance: 0.1
@@ -2880,6 +3142,24 @@ MonoBehaviour:
   wanderSpeedMultiplier: 0.5
   pauseAtNode: 1
   maxPredictionTime: 1
+--- !u!212 &1570590943 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+  m_PrefabInstance: {fileID: 1570590936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1570590944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570590938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e7f5d11bf24ac4cb4370325cca743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  spriteRenderer: {fileID: 1570590943}
 --- !u!1001 &1731494953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2948,6 +3228,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 297761703447499198, guid: 79885496eca5c404eb62e9a91db8d30d, type: 3}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2955,6 +3247,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1731494956}
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1731494961}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &1731494954 stripped
 Transform:
@@ -2981,7 +3276,7 @@ MonoBehaviour:
   target: {fileID: 366307500}
   behavior: 5
   detectionRadius: 600
-  maxSpeed: 10
+  maxSpeed: 7
   maxForce: 20
   slowingRadius: 0
   stopDistance: 0.1
@@ -2997,6 +3292,24 @@ MonoBehaviour:
   wanderSpeedMultiplier: 0.5
   pauseAtNode: 1
   maxPredictionTime: 1
+--- !u!212 &1731494960 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+  m_PrefabInstance: {fileID: 1731494953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1731494961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731494955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e7f5d11bf24ac4cb4370325cca743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  spriteRenderer: {fileID: 1731494960}
 --- !u!1001 &1858716889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3065,6 +3378,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 297761703447499198, guid: 79885496eca5c404eb62e9a91db8d30d, type: 3}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3072,6 +3397,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1858716892}
+    - targetCorrespondingSourceObject: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1858716897}
   m_SourcePrefab: {fileID: 100100000, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
 --- !u!4 &1858716890 stripped
 Transform:
@@ -3098,7 +3426,7 @@ MonoBehaviour:
   target: {fileID: 366307500}
   behavior: 5
   detectionRadius: 600
-  maxSpeed: 10
+  maxSpeed: 7
   maxForce: 20
   slowingRadius: 3
   stopDistance: 0.1
@@ -3114,6 +3442,24 @@ MonoBehaviour:
   wanderSpeedMultiplier: 0.5
   pauseAtNode: 1
   maxPredictionTime: 1
+--- !u!212 &1858716896 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9173693082039924739, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+  m_PrefabInstance: {fileID: 1858716889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1858716897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858716891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e7f5d11bf24ac4cb4370325cca743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  spriteRenderer: {fileID: 1858716896}
 --- !u!1 &2025951105
 GameObject:
   m_ObjectHideFlags: 0
