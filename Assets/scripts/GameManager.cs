@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         else
         {
             if (spawnRoutine == null)
-                spawnRoutine = StartCoroutine(InstantiateEnemies(1f));
+                spawnRoutine = StartCoroutine(InstantiateEnemies(3f));
             coolDown = maxCoolDown;
         }
 
