@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject MeleeWeapon, RangedWeapon, Companion, Player; //Get the GameObjects
-    public List<GameObject> EnemyPool; 
+    public GameObject MeleeWeapon, RangedWeapon, Player;
+    public GameObject defaultPetPrefab;   // used when no pet was picked
+    public List<GameObject> EnemyPool;
     public int enemiesCalled;
     public float maxCoolDown;
     public float coolDown;
@@ -14,15 +14,17 @@ public class GameManager : MonoBehaviour
     public bool swapWeapon, stopEnemies, cooldownReady;
     public Vector3 screenPos;
 
+    private GameObject activePet;
+    private Coroutine spawnRoutine;
+
     void Update()
     {
-        
         //toggle logic
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            swapWeapon = !swapWeapon; 
-        } 
-        
+            swapWeapon = !swapWeapon;
+        }
+
         if (swapWeapon)
         {
             RangedWeapon.SetActive(true);
@@ -34,23 +36,34 @@ public class GameManager : MonoBehaviour
             MeleeWeapon.SetActive(true);
         }
 
-
         if (stopEnemies)
         {
-            StopCoroutine("InstantiateEnemies");
+            if (spawnRoutine != null)
+            {
+                StopCoroutine(spawnRoutine);
+                spawnRoutine = null;
+            }
             RoundChange();
         }
         else
         {
-            StartCoroutine(InstantiateEnemies(3f));
+            if (spawnRoutine == null)
+                spawnRoutine = StartCoroutine(InstantiateEnemies(1f));
             coolDown = maxCoolDown;
         }
 
-        if (Input.GetKey(KeyCode.Alpha3) && Companion.activeSelf == false)
+        // Summon the pet
+        if (Input.GetKeyDown(KeyCode.Alpha3) && activePet == null)
         {
-            Companion.SetActive(true);
-            Companion.transform.position = new Vector3(Player.transform.position.x + 3, Player.transform.position.y, 0);
-            StartCoroutine(CompanionAction(15));
+            GameObject prefab = PetSelection.selectedPetPrefab != null
+                ? PetSelection.selectedPetPrefab
+                : defaultPetPrefab;
+
+            if (prefab != null)
+            {
+                activePet = Instantiate(prefab, Player.transform.position + Vector3.right * 3f, Quaternion.identity);
+                activePet.GetComponent<Pet>().Init(Player.transform);
+            }
         }
     }
 
@@ -73,6 +86,7 @@ public class GameManager : MonoBehaviour
                 stopEnemies = true;
             }
         }
+        spawnRoutine = null;
     }
 
     public void GetRandomPosition()
@@ -93,7 +107,6 @@ public class GameManager : MonoBehaviour
 
     public void RoundChange()
     {
-
         if (cooldownReady)
         {
             coolDown -= Time.deltaTime;
@@ -112,18 +125,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    bool AreAllEnemiesInactive(){
-	    foreach(GameObject enemy in EnemyPool) {
-		    if(enemy.activeSelf) {
-			    return false;
-		    }
-	    }
-	return true;
-}
-
-    public IEnumerator CompanionAction(float seconds)
+    bool AreAllEnemiesInactive()
     {
-        yield return new WaitForSeconds(seconds);
-        Companion.SetActive(false);
+        foreach (GameObject enemy in EnemyPool)
+        {
+            if (enemy.activeSelf)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
