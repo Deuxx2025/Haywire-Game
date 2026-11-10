@@ -19,7 +19,6 @@ public class Enemy : MonoBehaviour
     
     void Update()
     {
-        MeleeAttack.GetComponent<PlayerAttack>();
         if (hp <= 0)
         {
             gameObject.SetActive(false);
@@ -52,5 +51,10 @@ public class Enemy : MonoBehaviour
         {
             hp -= MeleeAttack.damage;
         }
+    }
+
+    public void TakeDamage(int amount)
+    {
+        hp -= amount;
     }
 }
