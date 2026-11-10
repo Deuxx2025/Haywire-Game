@@ -132,6 +132,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 414998421}
     - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 1258592701}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: otherWall
+      value: 
+      objectReference: {fileID: 329127487}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: MeleeAttack
       value: 
       objectReference: {fileID: 1099815421}
@@ -277,8 +289,9 @@ MonoBehaviour:
   - {fileID: 794069432}
   - {fileID: 1731494955}
   enemiesCalled: 0
-  maxCoolDown: 0
+  maxCoolDown: 10
   coolDown: 0
+  yOffsetEnemySpawn: 300
   swapWeapon: 0
   stopEnemies: 0
   cooldownReady: 0
@@ -854,7 +867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   rb: {fileID: 0}
   xInput: 0
-  hp: 3
+  hp: 100
   Enemy: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   minSpeed: 5
   baseMaxSpeed: 15
@@ -923,6 +936,18 @@ PrefabInstance:
       propertyPath: Pet
       value: 
       objectReference: {fileID: 414998421}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 1258592701}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: otherWall
+      value: 
+      objectReference: {fileID: 329127487}
     - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: MeleeAttack
       value: 
@@ -1412,6 +1437,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 414998421}
     - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 1258592701}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: otherWall
+      value: 
+      objectReference: {fileID: 329127487}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: MeleeAttack
       value: 
       objectReference: {fileID: 1099815421}
@@ -1524,6 +1561,18 @@ PrefabInstance:
       propertyPath: Pet
       value: 
       objectReference: {fileID: 414998421}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 1258592701}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: otherWall
+      value: 
+      objectReference: {fileID: 329127487}
     - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: MeleeAttack
       value: 
@@ -1930,6 +1979,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 414998421}
     - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 1258592701}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: otherWall
+      value: 
+      objectReference: {fileID: 329127487}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: MeleeAttack
       value: 
       objectReference: {fileID: 1099815421}
@@ -2043,6 +2104,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 414998421}
     - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 1258592701}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: otherWall
+      value: 
+      objectReference: {fileID: 329127487}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: MeleeAttack
       value: 
       objectReference: {fileID: 1099815421}
@@ -2155,6 +2228,18 @@ PrefabInstance:
       propertyPath: Pet
       value: 
       objectReference: {fileID: 414998421}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 1258592701}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: otherWall
+      value: 
+      objectReference: {fileID: 329127487}
     - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: MeleeAttack
       value: 
@@ -2927,6 +3012,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 414998421}
     - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 1258592701}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: otherWall
+      value: 
+      objectReference: {fileID: 329127487}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: MeleeAttack
       value: 
       objectReference: {fileID: 1099815421}
@@ -3040,6 +3137,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 414998421}
     - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 1258592701}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: otherWall
+      value: 
+      objectReference: {fileID: 329127487}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: MeleeAttack
       value: 
       objectReference: {fileID: 1099815421}
@@ -3152,6 +3261,18 @@ PrefabInstance:
       propertyPath: Pet
       value: 
       objectReference: {fileID: 414998421}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 1258592701}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+      propertyPath: otherWall
+      value: 
+      objectReference: {fileID: 329127487}
     - target: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
       propertyPath: MeleeAttack
       value: 

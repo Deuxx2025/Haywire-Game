@@ -177,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedAttack
   player: {fileID: 763257308}
   muzzle: {fileID: 844504542}
+  rangedWeapon: {fileID: 178404362}
   muzzleOffset: 0
   cooldown: 2
   fireRate: 1.5
@@ -1396,7 +1397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MeowlMovement
   rb: {fileID: 0}
   xInput: 0
-  hp: 1
+  hp: 100
   Enemy: {fileID: -4720745872315808518, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
   minSpeed: 5
   baseMaxSpeed: 15
@@ -3107,7 +3108,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.4056604, g: 0.09376113, b: 0.09376113, a: 1}
@@ -3135,6 +3136,7 @@ MonoBehaviour:
   time: 0
   countdownReady: 0
   normal: 0
+  xOffset: 0
   damage: 1
   mousePos: {x: 0, y: 0}
   characterPos: {x: 0, y: 0}

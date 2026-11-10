@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int enemiesCalled;
     public float maxCoolDown;
     public float coolDown;
+    public float yOffsetEnemySpawn;
     public bool swapWeapon, stopEnemies, cooldownReady;
     public Vector3 screenPos;
 
@@ -41,7 +42,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            //StartCoroutine(InstantiateEnemies(1f));
+            StartCoroutine(InstantiateEnemies(3f));
             coolDown = maxCoolDown;
         }
 
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(seconds);
             if (EnemyPool[i].activeSelf == false)
             {
+                if (stopEnemies) break;
                 GetRandomPosition();
                 EnemyPool[i].transform.position = screenPos;
                 EnemyPool[i].SetActive(true);
@@ -79,11 +81,11 @@ public class GameManager : MonoBehaviour
 
         if (randomIndex == 0)
         {
-            screenPos = Camera.main.ScreenToWorldPoint(new Vector3(-100, Screen.height, 0));   
+            screenPos = Camera.main.ScreenToWorldPoint(new Vector3(-100, Player.transform.position.y + yOffsetEnemySpawn, 0));   
         }
         else
         {
-            screenPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width + 100, Screen.height, 0));
+            screenPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width + 100, Player.transform.position.y + yOffsetEnemySpawn, 0));
         }
 
         screenPos = new Vector3(screenPos.x, screenPos.y, 0);

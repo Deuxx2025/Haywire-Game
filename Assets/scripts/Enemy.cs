@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
     public int hp = 1;
     public int damage = 1;
     public float speed = 2f;
+    public Collider2D enemy;
+    public Collider2D wall;
+    public Collider2D otherWall;
     public Bullet Bullet;
     public PlayerAttack MeleeAttack;
     public Companion Pet;
@@ -15,6 +18,7 @@ public class Enemy : MonoBehaviour
     {
         hp = maxHp;
         _rb = GetComponent<Rigidbody2D>();
+        enemy = GetComponent<Collider2D>();
     }
     
     void Update()
@@ -30,6 +34,9 @@ public class Enemy : MonoBehaviour
         {
             hp = maxHp;
         }
+
+        Physics2D.IgnoreCollision(enemy, wall, true);
+        Physics2D.IgnoreCollision(enemy, otherWall, true);
 
     }
 
