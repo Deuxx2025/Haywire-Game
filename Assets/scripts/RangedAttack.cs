@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class RangedAttack : MonoBehaviour
 {
     public Transform player;    //player location
     public Transform muzzle;    //muzzle location
     public SpriteRenderer rangedWeapon;
+    public TMP_Text bulletsDisplay;
+    public TMP_Text warningDisplay;
     public float muzzleOffset = 0.492f; //offset value to put the muzzle at the tip of the object
     public float cooldown = 2;  //cooldown for the next shot      
     public float fireRate = 2;
@@ -50,6 +53,17 @@ public class RangedAttack : MonoBehaviour
         else
         {
             rangedWeapon.color = Color.green;
+        }
+
+        bulletsDisplay.text = bulletsLeft.ToString();
+
+        if (bulletsLeft == 0)
+        {
+            warningDisplay.enabled = true;
+        }
+        else
+        {
+            warningDisplay.enabled = false;
         }
 
         if (countdownReady)
