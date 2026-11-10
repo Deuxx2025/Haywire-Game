@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     public float time;  //number to keep the object active for a while
     public bool countdownReady; //boolean to help with the time logic
     public float normal;    //force a normalize value for the trasform
+    public float xOffset;
     public int damage = 1;
     public Vector2 mousePos, characterPos, pointDirection;  //Vector 2 for mouse, player and direction location
     
@@ -33,7 +34,7 @@ public class PlayerAttack : MonoBehaviour
             normal = 1;
         }
 
-        gameObject.transform.position = new Vector3 (player.position.x + normal, player.position.y, 0);
+        gameObject.transform.position = new Vector3 (player.position.x + xOffset * normal , player.position.y, 0);
 
         if (countdownReady)
         {

@@ -1105,7 +1105,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.7924528, g: 0, b: 0, a: 1}
@@ -1136,7 +1136,7 @@ MonoBehaviour:
   fireRate: 2
   countdownReady: 0
   normal: 0
-  yOffset: 0.43
+  yOffset: 0.15
   bulletsLeft: 0
   maxBullets: 2
   mousePos: {x: 0, y: 0}
@@ -2284,7 +2284,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 3, z: 1}
+  m_LocalScale: {x: 1.5, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 366307500}
@@ -2410,6 +2410,7 @@ MonoBehaviour:
   time: 0
   countdownReady: 0
   normal: 0
+  xOffset: 1.5
   damage: 1
   mousePos: {x: 0, y: 0}
   characterPos: {x: 0, y: 0}
