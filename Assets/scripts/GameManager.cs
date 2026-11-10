@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            StartCoroutine(InstantiateEnemies(1f));
+            //StartCoroutine(InstantiateEnemies(1f));
             coolDown = maxCoolDown;
         }
 

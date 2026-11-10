@@ -5,6 +5,7 @@ public class RangedAttack : MonoBehaviour
 {
     public Transform player;    //player location
     public Transform muzzle;    //muzzle location
+    public SpriteRenderer rangedWeapon;
     public float muzzleOffset = 0.492f; //offset value to put the muzzle at the tip of the object
     public float cooldown = 2;  //cooldown for the next shot      
     public float fireRate = 2;
@@ -19,6 +20,7 @@ public class RangedAttack : MonoBehaviour
     {
         bulletsLeft = maxBullets;
         cooldown = fireRate;
+        rangedWeapon.color = Color.green;
     }
 
     void Update()
@@ -40,6 +42,15 @@ public class RangedAttack : MonoBehaviour
         //drawing the position of the game object dynamically
         gameObject.transform.position = new Vector3 (player.position.x + normal, player.position.y + yOffset, 0);
         muzzle.transform.position = new Vector3 (player.transform.position.x + muzzleOffset + normal * 2, player.position.y + yOffset, 0);
+
+        if (bulletsLeft == 0 || cooldown != fireRate)
+        {
+            rangedWeapon.color = Color.darkRed;
+        }
+        else
+        {
+            rangedWeapon.color = Color.green;
+        }
 
         if (countdownReady)
         {
