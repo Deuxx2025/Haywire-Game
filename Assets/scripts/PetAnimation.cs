@@ -18,7 +18,7 @@ public class PetAnimation : MonoBehaviour
         float vx = rb.linearVelocity.x;
         bool moving = Mathf.Abs(vx) > 0.1f;
 
-        animator.SetBool("IsMoving", moving);
+        animator.SetBool("isMoving", moving);
 
         if (moving)
             spriteRenderer.flipX = vx < 0; // ALWAYS MAKE SPRITES FACE RIGHT OTHERWISE CHARACTER WILL MOONWALK
