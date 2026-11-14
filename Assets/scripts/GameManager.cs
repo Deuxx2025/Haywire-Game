@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
             MeleeWeapon.SetActive(true);
         }
 
-        if (stopEnemies)
+        /*if (stopEnemies)
         {
             if (spawnRoutine != null)
             {
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
             if (spawnRoutine == null)
                 spawnRoutine = StartCoroutine(InstantiateEnemies(3f));
             coolDown = maxCoolDown;
-        }
+        }*/
 
         // Summon the pet
         if (Input.GetKeyDown(KeyCode.Alpha3) && activePet == null)

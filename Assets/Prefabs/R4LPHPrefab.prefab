@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 6344044402615365723}
   - component: {fileID: 2519588878418540097}
   - component: {fileID: -4720745872315808518}
+  - component: {fileID: -1808357716792202374}
+  - component: {fileID: 2847459901732871121}
   m_Layer: 0
-  m_Name: EnemyPrefab
+  m_Name: R4LPHPrefab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,8 +86,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 297761703447499198, guid: 79885496eca5c404eb62e9a91db8d30d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -170,6 +172,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f536d0f36984149b9ddbf69d52de17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  data: {fileID: 11400000, guid: 4ad0f9984bbaf7e48b6e4293d4ef0aea, type: 2}
+  _rb: {fileID: 0}
+  enemy: {fileID: 0}
+  wall: {fileID: 0}
+  otherWall: {fileID: 0}
+  Bullet: {fileID: 3421477950859846912, guid: 16551dc513d17ba4b9bb322247384ac1, type: 3}
+  MeleeAttack: {fileID: 0}
+  Pet: {fileID: 0}
+  maxHp: 1
   hp: 1
   damage: 1
-  Bullet: {fileID: 3421477950859846912, guid: 16551dc513d17ba4b9bb322247384ac1, type: 3}
+--- !u!114 &-1808357716792202374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534665854676542903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8d958b1d466f45b8983430f7781f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SteeringAgent
+  target: {fileID: 0}
+  behavior: 0
+  detectionRadius: 600
+  maxSpeed: 10
+  maxForce: 20
+  slowingRadius: 3
+  stopDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 12
+  jumpCooldown: 0.4
+  obstacleCheckDistance: 0.6
+  maxObstacleHeight: 2
+  canJump: 1
+  wanderNodes: []
+  nodeReachDistance: 0.3
+  wanderSpeedMultiplier: 0.5
+  pauseAtNode: 1
+  maxPredictionTime: 1
+--- !u!114 &2847459901732871121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534665854676542903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e7f5d11bf24ac4cb4370325cca743d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimation
+  spriteRenderer: {fileID: 0}

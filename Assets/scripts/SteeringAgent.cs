@@ -1,5 +1,3 @@
-using System.IO;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -26,7 +24,8 @@ public class SteeringAgent : MonoBehaviour
     public float jumpCooldown = 0.4f;
     public float obstacleCheckDistance = 0.6f;
     public float maxObstacleHeight = 2f; // Maximum Height
-    
+    public bool canJump = true;
+
     Collider2D col;
     float nextJumpTime;
 
@@ -84,13 +83,15 @@ public class SteeringAgent : MonoBehaviour
 
             case Behavior.Evade:
                 steering = playerDetected ? Evade() : Brake();
-                if (Mathf.Abs(steering) > 0.1f)
+
+                if (canJump && Mathf.Abs(steering) > 0.1f)
                     TryJump(Mathf.Sign(steering));
                 break;
 
             case Behavior.Pursue:
                 steering = playerDetected ? Pursue() : Brake();
-                if (Mathf.Abs(steering) > 0.1f)
+
+                if (canJump && Mathf.Abs(steering) > 0.1f)
                     TryJump(Mathf.Sign(steering));
                 break;
 
@@ -176,8 +177,6 @@ public class SteeringAgent : MonoBehaviour
 
     float Wander()
     {
-        Debug.Log($"Wander running | nodes: {(wanderNodes == null ? "null" : wanderNodes.Length.ToString())} | velocity.x: {rb.linearVelocity.x:F2}");
-
         if (wanderNodes == null || wanderNodes.Length == 0)
             return Brake();
 
@@ -226,14 +225,20 @@ public class SteeringAgent : MonoBehaviour
         float distance = Mathf.Abs(target.position.x - transform.position.x);
         float targetVelX = targetRb != null ? targetRb.linearVelocity.x : 0f;
 
-        float predictionTime = Mathf.Min(distance / maxSpeed, maxPredictionTime);
+        // To prevent division by 0 when enemy has no movement speed
+        float predictionTime = maxSpeed > 0.01f
+            ? Mathf.Min(distance / maxSpeed, maxPredictionTime)
+            : 0f;
+
         float futureX = target.position.x + targetVelX * predictionTime;
 
         float dir = Mathf.Sign(futureX - transform.position.x);
         float desiredVelX = dir * maxSpeed;
         float steer = desiredVelX - rb.linearVelocity.x;
+
         return Mathf.Clamp(steer, -maxForce, maxForce);
     }
+
 
     float Brake()
     {
@@ -244,5 +249,13 @@ public class SteeringAgent : MonoBehaviour
     {
         Gizmos.color = new Color(1f, 0f, 0f, 0.4f);
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
+    }
+
+    public void SetTarget(Transform newTarget)
+    {
+        target = newTarget;
+        targetRb = target != null
+            ? target.GetComponent<Rigidbody2D>()
+            : null;
     }
 }

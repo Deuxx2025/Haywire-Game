@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6941aa303f8dc44db161db3c9b34732, type: 3}
+  m_Name: R4LPHData
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  enemyName: R4LPH
+  prefab: {fileID: 4534665854676542903, guid: ab1d1cdabdfe7894b8e93cc27b22cd29, type: 3}
+  maxHp: 2
+  damage: 1
+  movementBehavior: 0
+  speed: 10
+  maxForce: 20
+  detectionRadius: 10
+  canJump: 1
+  canBeTrampled: 0
+  explodes: 0
+  shoots: 0
+  flies: 0
+  firstRound: 1
